@@ -16,7 +16,7 @@ q.subscribe do |delivery_info, metadata, payload|
   i += 1
 end
 
-0.upto(1000) { x.publish("Hello!", :routing_key => q.name) }
+0.upto(100000) { x.publish("Hello!", :routing_key => q.name) }
 
 sleep 10.0
 conn.close
